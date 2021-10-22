@@ -10,14 +10,15 @@ def create_app(test_config=None):
     setup_db(app)
     CORS(app)
 
-    @app.route('/')
-    def get_greeting():
-        excited = os.environ['EXCITED']
-        greeting = "Hello" 
-        if excited == 'true': greeting = greeting + "!!!!!"
-        return greeting
+    # @app.route('/')
+    # def get_greeting():
+    #     excited = os.environ['EXCITED']
+    #     greeting = "Hello" 
+    #     if excited == 'true': greeting = greeting + "!!!!!"
+    #     return greeting
 
-    @app.route('/coolkids')
+    # @app.route('/coolkids')
+    @app.route('/')
     def be_cool():
         return "Be cool, man, be coooool! You're almost a FSND grad!"
 
@@ -27,4 +28,4 @@ app = create_app()
 
 if __name__ == '__main__':
     app.run()
-    # app.run(host='0.0.0.0', port=8080, debug=True)
+    # app.run(host='0.0.0.0', port=8000, debug=True)
